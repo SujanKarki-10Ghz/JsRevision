@@ -49,3 +49,23 @@ const max = arr.reduce((accumulator, currentValue)=>{
      return accumulator > currentValue ? accumulator : currentValue;
 }, 0)
 console.log(max); //=> 6
+
+const users = [
+    {firstName: "akshay", lastName: "saini", age:26},
+    {firstName:"donald", lastName:"trump", age: 75},
+    {firstName:"elon", lastName:"musk", age: 50},
+    {firstName:"deepika", lastName:"padukone", age: 26},
+];
+
+const fullName = users.map((items)=>`${items.firstName} ${items.lastName}`);
+console.log(fullName);
+
+const age = users.reduce((acc, curr)=>{
+    if(acc[curr.age]){
+        acc[curr.age] = ++ acc[curr.age];
+    }else{
+        acc[curr.age] = 1;
+    }
+    return acc;
+},{})
+console.log(age);
